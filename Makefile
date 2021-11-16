@@ -28,7 +28,8 @@ $(LIBRARY): $(O_FILES)
 $(C_PATH)/%.o: $(C_PATH)/%.c
 	$(V_CC) -c $(INCLUDES) $< -o $@
 clean:
-	$echo Removing object files	
+	@echo Removing object files
+	$(AT)-rm -f $(C_PATH)/*.o	 
 fclean:
 	@echo Removing object files
 	$(AT)-rm -f $(C_PATH)/*.o	 
