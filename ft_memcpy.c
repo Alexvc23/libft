@@ -24,28 +24,31 @@
    until n (given length).
 */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char		*pdest;
-	const char	*psrc;
+	size_t i;
 
-	pdest = (char *)dest;
-	psrc = (const char *)src;
-	if (pdest == NULL || psrc == NULL)
-		return (NULL);
-	while (n--)
-		*(pdest++) = *(psrc++);
-	return (dest);
+	if (!dst && !src)
+		return (0);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dst);
 }
-/*
+/* 
 int main()
 {
 	char test[] = "aabbccdd"; 
+	char test1[] = "aabbccdd"; 
 	int n = sizeof(test)/sizeof(test[0]);
-	int i = -1;
 
 	ft_memcpy(test + 2, test, 6);
-		printf("%s\n", test);
+	memcpy(test1 + 2, test1, 6);
+	printf("%s\n", test);
+	printf("%s\n", test1);
 	return (0);
 }
-*/
+ */

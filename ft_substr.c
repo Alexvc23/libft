@@ -33,12 +33,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	j = start;
 	real_t = 0;
 	src_len = ft_strlen(s);
-	if (!s)
-		return (NULL);
-	if (src_len > start)
+	if (src_len >= start)
 		real_t = (src_len - start);
 	d = malloc((real_t + 1) * sizeof(char));
-	if (!d)
+	if (!d )
 		return (NULL);
 	while (j < src_len && len--)
 		d[i++] = s[j++];
