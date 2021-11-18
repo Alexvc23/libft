@@ -13,7 +13,7 @@ LIBRARY	= libft.a
 C_PATH  = ./
 C_FILES = $(wildcard $(C_PATH)/*.c)
 O_FILES = $(C_FILES:$(C_PATH)/%.c=$(C_PATH)/%.o)
-INCLUDES = -I libft.h 
+INCLUDES = -Iincludes 
 
 .PHONY: all clean
 .DEFAULT: all

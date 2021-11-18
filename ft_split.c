@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+void	ft_free(char **arr)
+{
+	int i;
+
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
+}
+
 int	ft_count_strings(char *str, char c, int count)
 {
 	if (!*str)
@@ -65,10 +75,7 @@ char	**ft_split(char const *s, char c)
 		while (s[index] == c)
 			index++;
 		if (s[index] && s[index] != c)
-		{
-			new_str[i++] = ft_new_word((char *)s, c, index);
-			index++;
-		}
+			new_str[i++] = ft_new_word((char *)s, c, index++);
 		while (s[index] && s[index] != c)
 			index++;
 	}
