@@ -17,9 +17,14 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s) + 1);
+   int   i;
+
+   i = 0;
+   while (s[i])
+      write(fd, &s[i++], 1);
 }
-/* int main()
+/* 
+ int main()
    {
    char buff[100];
    char *test = "tengo la camisa negra";
@@ -36,4 +41,5 @@ void	ft_putstr_fd(char *s, int fd)
    printf("%s\n", buff);
    close(fd);
    }
-   */
+  
+ */

@@ -21,35 +21,29 @@ Allocates (with malloc(3)) and returns a substring from the string ’s’.
 The substring begins at index ’start’ and is of maximum size ’len’.
 */
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*d;
-	size_t	i;
-	size_t	j;
-	size_t	real_t;
-	size_t	src_len;
+   char *d;
+   size_t i;
+   size_t j;
 
-	i = 0;
-	j = start;
-	real_t = 0;
-	src_len = ft_strlen(s);
-	if (src_len >= start)
-		real_t = (src_len - start);
-	d = malloc((real_t + 1) * sizeof(char));
-	if (!d )
-		return (NULL);
-	while (j < src_len && len--)
-		d[i++] = s[j++];
-	d[i] = '\0';
-	return (d);
+   d = malloc((len + 1) * sizeof(char));
+   if (!d || !s)
+      return (NULL);
+   i = start;
+   j = 0;
+   while (i < ft_strlen(s) && j < len)
+      d[j++] = s[i++];
+   d[j] = '\0';
+   return (d);
 }
-/* 
+/*
    int main()
    {
    char	*test = "On many machines, this doesn't matter a great deal";
    char	*str = "i just want this part #############";
    size_t len = strlen(test);
-   size_t	index;	
+   size_t	index;
    char *buff;
 
    printf(L_YELLOW("test ft_substr\n"));
@@ -59,7 +53,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
    printf(WHITE(" \n"));
    index = (len - ((long long)&test[len] - (long long)(strstr(test,\
    "doesn't"))));
-   buff = ft_substr(test, ft_strlen(test), 233333); 
+   buff = ft_substr(test, ft_strlen(test), 233333);
    printf(RED("New string after function call with size 233333: "));
    printf(WHITE("%s\n"), buff);
    free(buff);
@@ -70,7 +64,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
    printf(WHITE(",\n"));
    index = (len - ((long long)&test[len] - (long long)(strstr(test,\
    ","))));
-   buff = ft_substr(test, index, 8); 
+   buff = ft_substr(test, index, 8);
    printf(RED("New string after function call with size 8: "));
    printf(WHITE("%s\n"), buff);
    free(buff);
@@ -81,7 +75,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
    printf(WHITE("many\n"));
    index = (len - ((long long)&test[len] - (long long)(strstr(test,\
    "many"))));
-   buff = ft_substr(test, index, 0); 
+   buff = ft_substr(test, index, 0);
    printf(RED("New string after function call with size 0: "));
    printf(WHITE("%d\n"), *buff);
    free(buff);
@@ -92,7 +86,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
    printf(WHITE("great\n"));
    index = (len - ((long long)&test[len] - (long long)(strstr(test,\
    "great"))));
-   buff = ft_substr(test, index, 3); 
+   buff = ft_substr(test, index, 3);
    printf(RED("New string after function call with size 3: "));
    printf(WHITE("%s\n"), buff);
    free(buff);
@@ -101,7 +95,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
    printf(WHITE("%s\n"), test);
    printf(RED("to be find: "));
    printf(WHITE("index 100\n"));
-   buff = ft_substr(test, 100, 1); 
+   buff = ft_substr(test, 100, 1);
    printf(RED("New string after function call with size 1: "));
    printf(WHITE("%s\n"), buff);
    free(buff);
@@ -110,7 +104,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
    printf(WHITE("%s\n"), str);
    printf(RED("to be find: "));
    printf(WHITE(" index  5 with size 10\n"));
-   buff = ft_substr(str, 5, 10); 
+   buff = ft_substr(str, 5, 10);
    printf(RED("New string after function call with size 1: "));
    printf("%s\n", buff);
    free(buff);
@@ -119,7 +113,7 @@ printf(RED("string: "));
 printf(WHITE("%s\n"), str);
 printf(RED("to be find: "));
 printf(WHITE(" index  5 \n"));
-buff = ft_substr(str, 5, 20); 
+buff = ft_substr(str, 5, 20);
 printf(RED("New string after function call with size 20: "));
 printf("%s\n", buff);
 free(buff);

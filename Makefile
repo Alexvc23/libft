@@ -10,6 +10,7 @@ else
 endif
 
 LIBRARY	= libft.a
+FLAGS	= -Wall -Werror -Wextra
 C_PATH  = ./
 C_FILES = $(wildcard $(C_PATH)/*.c)
 O_FILES = $(C_FILES:$(C_PATH)/%.c=$(C_PATH)/%.o)
@@ -26,7 +27,7 @@ $(LIBRARY): $(O_FILES)
 	@ranlib $(LIBRARY)
 
 $(C_PATH)/%.o: $(C_PATH)/%.c
-	$(V_CC) -c $(INCLUDES) $< -o $@
+	$(V_CC) -c $(FLAGS) $(INCLUDES) $< -o $@
 clean:
 	@echo Removing object files
 	$(AT)-rm -f $(C_PATH)/*.o	 
