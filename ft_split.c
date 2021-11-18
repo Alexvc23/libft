@@ -6,7 +6,7 @@
 /*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:29:17 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/15 13:42:18 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2021/11/18 12:02:08 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free(char **arr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (arr[i])
@@ -35,7 +35,7 @@ int	ft_count_strings(char *str, char c, int count)
 	return (ft_count_strings(str, c, count));
 }
 
-char	*ft_new_word(char *s, char charset, int index)
+char	*ft_new_word(char *s, char charset, int index, char **arr)
 {
 	char	*new_str;
 	int		len;
@@ -49,7 +49,10 @@ char	*ft_new_word(char *s, char charset, int index)
 		len++;
 	new_str = malloc((len + 1) * sizeof(char));
 	if (!new_str)
+	{
+		ft_free(arr);
 		return (NULL);
+	}
 	i = index;
 	while (s[i] && s[i] != charset && j <= len)
 		new_str[j++] = s[i++];
@@ -75,7 +78,7 @@ char	**ft_split(char const *s, char c)
 		while (s[index] == c)
 			index++;
 		if (s[index] && s[index] != c)
-			new_str[i++] = ft_new_word((char *)s, c, index++);
+			new_str[i++] = ft_new_word((char *)s, c, index++, new_str);
 		while (s[index] && s[index] != c)
 			index++;
 	}

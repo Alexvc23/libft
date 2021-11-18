@@ -32,49 +32,20 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	ptr2 = (unsigned char *)s2;
 	if (!n)
 		return (0);
-	while (*ptr1 == *ptr2 && --n)
+	while (*ptr1 && *ptr2 && *ptr1 == *ptr2 && --n)
 	{
 		ptr1++;
 		ptr2++;
 	}
 	return (*ptr1 - *ptr2);
 }
-/*
-   int	main()
-   {
-   printf(L_YELLOW("---test ft_strncmp---\n"));
-   printf(WHITE("1. things aren't the way they were before\n\
-   2. things aren't the way they were before\n"));
-   printf(RED("after function call with size (string 1):\n"));
-   printf(WHITE("%d\n"), ft_strncmp("things aren't the way they were before", \
-   "things aren't the way they were before", \
-   sizeof("things aren't the way they were before")));
-   printf(WHITE("%d\n"), strncmp("things aren't the way they were before", \
-   "things aren't the way they were before", \
-   sizeof("things aren't the way they were before")));
-   printf(RED("----------------------------------------\n"));
-   printf(WHITE("1. things aren't the way they were before\n\
-   2. things aren't the way they were before\n"));
-   printf(RED("after function call with size (5):\n"));
-   printf(WHITE("%d\n"), ft_strncmp("things aren't the way they were before", \
-   "things aren't the way they were before", 5)); 
-   printf(WHITE("%d\n"), strncmp("things aren't the way they were before", \
-   "things aren't the way they were before", 5)); 
-   printf(RED("----------------------------------------\n"));
-   printf(WHITE("1. things aren't r\n\
-   2. things aren't the way they were before\n"));
-   printf(RED("after function call with size (100):\n"));
-   printf(WHITE("%d\n"), ft_strncmp("things aren't r", \
-   "things aren't the way they were before", 100)); 
-   printf(WHITE("%d\n"), strncmp("things aren't r", \
-   "things aren't the way they were before", 100)); 
-   printf(RED("----------------------------------------\n"));
-   printf(WHITE("1. things aren't r\n\
-   2. things aren't the way they were before\n"));
-   printf(RED("after function call with size (0):\n"));
-   printf(WHITE("%d\n"), ft_strncmp("zhings aren't r", \
-   "things aren't the way they were before", 0)); 
-   printf(WHITE("%d\n"), strncmp("zhings aren't r", \
-   "things aren't the way they were before", 0)); 
-   }
+/* int main()
+{
+		char	*s1 = "atoms\0\0\0\0";
+		char	*s2 = "atoms\0abc";
+
+    printf("%d\n", strncmp(s1,s2, 8));
+    printf("%d\n", ft_strncmp(s1,s2, 8));
+
+}
  */
