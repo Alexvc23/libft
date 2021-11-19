@@ -10,6 +10,50 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* void	ft_putnbr_fd(int n, int fd)
+#include"libft.h"
+
+void ft_putnbr_fd(int n, int fd)
 {
-} */
+    if (n < 0)
+    {
+        n *= -1;
+        write(fd, "-", 1);
+    }
+    if (n >= 10)
+    {
+        ft_putnbr_fd(n / 10, fd);
+        ft_putnbr_fd(n % 10, fd);
+    }
+    else
+        ft_putchar_fd(n + '0', fd); 
+}
+/* 
+int main()
+{
+    int i = 0;
+    int fd;
+    char buff[20];
+
+    fd = open("test.txt", O_WRONLY | O_CREAT, S_IWUSR);
+    if (fd < 0)
+    {
+        printf("Error creating file");
+        return (0);
+    }
+    ft_putnbr_fd(23434, fd);
+    ft_putchar_fd('\n', fd);
+    ft_putnbr_fd(-23434, fd);
+    ft_putchar_fd('\n', fd);
+    ft_putnbr_fd(0, fd);
+    close(fd);
+    fd = open("test.txt", O_RDONLY, S_IRUSR);
+    if (fd < 0)
+        {
+            printf("error reading file");
+            return (0);
+        }
+    while (read(fd, &buff[i], 1))
+        i++;
+    printf("%s\n", buff);
+}
+ */
