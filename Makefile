@@ -42,7 +42,8 @@ C_BONUS = \
 	  ./ft_lstadd_front.c \
 	  ./ft_lstnew.c		\
 	  ./ft_lstsize.c		\
-	  ./ft_lstlast.c
+	  ./ft_lstlast.c	\
+	  ./ft_lstadd_back.c
 
 O_FILES = $(C_LIBFT:.c=.o)
 O_BONUS = $(C_BONUS:.c=.o)
