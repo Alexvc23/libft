@@ -28,7 +28,7 @@ void	ft_lstprint(t_list **head)
     }
     while (ptr)
     {
-        printf("%s\n", ptr->content);
+        printf("%s\n", (char*)ptr->content);
         if (ptr->next)
             ptr = ptr->next;
         else

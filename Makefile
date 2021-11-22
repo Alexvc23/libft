@@ -45,7 +45,8 @@ C_BONUS = \
 	  ./ft_lstlast.c	\
 	  ./ft_lstadd_back.c \
 	  ./ft_lstdelone.c	\
-	  ./ft_lstclear.c
+	  ./ft_lstclear.c	\
+	  ./ft_lstiter.c
 
 O_FILES = $(C_LIBFT:.c=.o)
 O_BONUS = $(C_BONUS:.c=.o)
