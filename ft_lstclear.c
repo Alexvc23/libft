@@ -12,12 +12,11 @@
 
 #include"libft.h"
 
-/* 
 void del(void *content)
 {
     free(content);
+    return ;
 }
- */
 
 void    ft_lstclear(t_list **lst, void (*del)(void*))
 {
@@ -25,7 +24,7 @@ void    ft_lstclear(t_list **lst, void (*del)(void*))
 
     if (!*lst || !del)
         return ;
-    if (*lst)
+    while (*lst)
     {
         ptr = (*lst)->next;
         ft_lstdelone(*lst, del);
@@ -46,13 +45,14 @@ int main()
 	char		*str2 = strdup("ipsum");
 	char		*str3 = strdup("dolor");
 	char		*str4 = strdup("sit");
+    char        *str5 = strdup("tengo la camisa negra");
 
     ptr = &del;
 	elem = ft_lstnew(str);
 	elem2 = ft_lstnew(str2);
 	elem3 = ft_lstnew(str3);
 	elem4 = ft_lstnew(str4);
-    begin = ft_lstnew("tengo la camisa negra");
+    begin = ft_lstnew(str5);
     ft_lstadd_front(&begin, elem4);
     ft_lstadd_front(&begin, elem3);
     ft_lstadd_front(&begin, elem2);
@@ -60,5 +60,4 @@ int main()
 
 
     ft_lstclear(&elem, ptr);
-}
- */
+} */
