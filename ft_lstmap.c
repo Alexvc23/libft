@@ -1,34 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alex-ubuntu <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 09:31:31 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/22 09:32:00 by jvalenci         ###   ########lyon.fr   */ /*                                                                            */
+/*   Created: 2021/11/23 08:46:46 by alex-ubun         #+#    #+#             */
+/*   Updated: 2021/11/23 08:48:16 by alex-ubun        ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void    ft_lstclear(t_list **lst, void (*del)(void*))
+t_list	*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del)(void*))
 {
-    t_list  *ptr;
+	t_list *new_lst;
+    t_list *elem;
 
-    if (!*lst || !del)
-        return ;
-    while (*lst)
-    {
-        ptr = (*lst)->next;
-        ft_lstdelone(*lst, del);
-        *lst = ptr;
-    }
-    lst = 0;
+	if (!lst)
+		return (0);
+	new_lst = 0;
+	while (lst)
+	{
+		if (!(elem = ft_lstnew(f(lst->content))))
+		{
+			ft_lstclear(&new_lst, del);
+			return (0);
+		}
+		ft_lstadd_back(&new_lst, elem);
+		lst = lst->next;
+	}
+	return (new_lst);
 }
-/* void del(void *content)
+
+void del(void *s)
 {
-    free(content);
-    return ;
+    free(s);
+    return;
+}
+
+void 	*ft_f(void *s)
+{
+	char	*str;
+
+	str = (char*)s;
+	if (!s)
+		return (0); 
+	while (*str)
+	{
+		if (*str >= 'a' && *str <= 'z')
+			*str -= 32;
+		str++;
+	}
+	return (s);
 }
 
 int main()
@@ -38,14 +62,13 @@ int main()
 	t_list		*elem2;
 	t_list		*elem3;
 	t_list		*elem4;
-    void        (*ptr)(void*);
+    t_list      *ptr;
 	char		*str = strdup("lorem");
 	char		*str2 = strdup("ipsum");
 	char		*str3 = strdup("dolor");
 	char		*str4 = strdup("sit");
     char        *str5 = strdup("tengo la camisa negra");
 
-    ptr = &del;
 	elem = ft_lstnew(str);
 	elem2 = ft_lstnew(str2);
 	elem3 = ft_lstnew(str3);
@@ -56,7 +79,6 @@ int main()
     ft_lstadd_front(&begin, elem2);
     ft_lstadd_front(&begin, elem);
 
-
-    ft_lstclear(&elem, ptr);
+	ptr = ft_lstmap(elem, ft_f, del);
+	ft_lstprint(&ptr);
 }
-*/
