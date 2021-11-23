@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex-ubuntu <marvin@42.fr>                 +#+  +:+       +#+        */
+/*   By: jvalenci <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 10:08:33 by alex-ubun         #+#    #+#             */
-/*   Updated: 2021/11/18 09:47:30 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 11:36:36 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-   int   i;
+	int	i;
 
-   i = 0;
-   while (s[i])
-      write(fd, &s[i++], 1);
+	i = 0;
+	while (s[i])
+		write(fd, &s[i++], 1);
+	return ;
 }
 /* 
- int main()
+   int main()
    {
    char buff[100];
    char *test = "tengo la camisa negra";
@@ -41,5 +42,5 @@ void	ft_putstr_fd(char *s, int fd)
    printf("%s\n", buff);
    close(fd);
    }
-  
- */
+
+*/

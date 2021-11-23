@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex-ubuntu <marvin@42.fr>                 +#+  +:+       +#+        */
+/*   By: jvalenci <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:52:19 by alex-ubun         #+#    #+#             */
 /*   Updated: 2021/11/22 21:54:50 by alex-ubun        ###   ########.fr       */

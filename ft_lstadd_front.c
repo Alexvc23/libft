@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex-ubuntu <marvin@42.fr>                 +#+  +:+       +#+        */
+/*   By: jvalenci <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:14:01 by alex-ubun         #+#    #+#             */
 /*   Updated: 2021/11/19 15:14:45 by alex-ubun        ###   ########.fr       */

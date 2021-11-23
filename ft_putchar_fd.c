@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex-ubuntu <marvin@42.fr>                 +#+  +:+       +#+        */
+/*   By: jvalenci <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 10:07:21 by alex-ubun         #+#    #+#             */
-/*   Updated: 2021/11/18 09:48:17 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 11:35:15 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	return ;
 }
 /* 
    int main()

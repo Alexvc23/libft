@@ -6,7 +6,7 @@
 /*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:27:36 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/03 10:27:07 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 11:56:54 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	if (!dst && !src)
 		return (0);

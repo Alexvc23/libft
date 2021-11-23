@@ -6,7 +6,7 @@
 /*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 10:05:54 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/18 10:14:34 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 11:59:36 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ Allocates (with malloc(3)) and returns a substring from the string ’s’.
 The substring begins at index ’start’ and is of maximum size ’len’.
 */
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-   char *d;
-   size_t i;
-   size_t j;
+	char		*d;
+	size_t		i;
+	size_t		j;
 
-   d = malloc((len + 1) * sizeof(char));
-   if (!d || !s)
-      return (NULL);
-   i = start;
-   j = 0;
-   while (i < ft_strlen(s) && j < len)
-      d[j++] = s[i++];
-   d[j] = '\0';
-   return (d);
+	d = malloc((len + 1) * sizeof(char));
+	if (!d || !s)
+		return (NULL);
+	i = start;
+	j = 0;
+	while (i < ft_strlen(s) && j < len)
+		d[j++] = s[i++];
+	d[j] = '\0';
+	return (d);
 }
 /*
    int main()

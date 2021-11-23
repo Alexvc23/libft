@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex-ubuntu <marvin@42.fr>                 +#+  +:+       +#+        */
+/*   By: jvalenci <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 10:09:43 by alex-ubun         #+#    #+#             */
-/*   Updated: 2021/11/17 10:10:13 by alex-ubun        ###   ########.fr       */
+/*   Updated: 2021/11/23 11:35:42 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-   int   i;
+	int	i;
 
-   i = 0;
-   while (s[i])
-       write(fd, &s[i++], 1);
-   write(fd, "\n", 1);
+	i = 0;
+	while (s[i])
+		write(fd, &s[i++], 1);
+	write(fd, "\n", 1);
+	return ;
 }
 /* 
- int main()
+   int main()
    {
    char buff[100];
    char *test = "tengo la camisa negra";
