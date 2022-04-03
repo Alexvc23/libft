@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../includes/libft.h"
+#include"libft.h"
 
 /*
  locate first occurrence of character in string

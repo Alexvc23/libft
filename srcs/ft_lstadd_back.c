@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jvalenci <jvalenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 09:28:59 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/23 11:29:24 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2022/02/11 14:42:34 by jvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../includes/libft.h"
+#include"libft.h"
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
@@ -21,21 +21,48 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 		return ;
 	if (!*alst)
 	{
+		new->previous = NULL;
 		*alst = new;
 		return ;
 	}
 	ptr = ft_lstlast(*alst);
 	ptr->next = new;
+	new->previous = ptr;
 }
-/*
-   int main()
-   {
-   t_list *ptr = ft_lstnew("this is the head node");
-   t_list *test = ft_lstnew("tengo la camisa negra y el segundo node");
-   t_list *test1 = ft_lstnew("this is the last node");
+/* void	ft_printback(t_list **alst)
+{
+	t_list *last;
 
-   ft_lstadd_front(&ptr, test);
-   ft_lstadd_back(&ptr, test1);
-   ft_lstprint(&ptr);
-   }
-   */
+	last = ft_lstlast(*alst);
+	while(last->content) 
+	{
+		ft_putnbr_fd(*((int*)last->content), 1);
+		if (last->previous)
+			last = last->previous;
+		else
+			return ;
+	}
+}
+
+   int main(int args, char *argv[])
+   {
+	   int *num;
+	   num = malloc((args - 1) * sizeof(int));
+	   t_list *stack_a;
+
+	   int	i = 0;
+	   stack_a = NULL;
+
+    while (i <= (args - 2))
+	{
+		num[i] = ft_atoi(argv[(i + 1)]);
+		i++;
+	}
+		i = 0;
+    while (i <= (args - 2))
+        ft_lstadd_back(&stack_a, ft_lstnew(&num[i++]));
+	ft_lstprint(&stack_a);
+	ft_printback(&stack_a);
+	ft_putstr_fd("\n", 1);
+		return (0);
+   } */

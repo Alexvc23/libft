@@ -6,11 +6,11 @@
 /*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 14:53:58 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/12 15:05:16 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2022/03/19 15:18:21 by jvalenci         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 int	ft_nblen(long long n)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jvalenci <jvalenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:49:19 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/15 13:50:04 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2022/03/06 21:17:26 by jvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -31,22 +31,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new_string[iter] = '\0';
 	return (new_string);
 }
-/*
+/* 
    int main()
    {
    char *test;
 
    test = ft_strjoin("buenos dias amigitos", " como estan");
-   printf(WHITE("%s\n"), test);
+   printf("%s\n", test);
    free(test); 
    test = ft_strjoin("", " como estan");
-   printf(WHITE("%s\n"), test);
+   printf("%s\n", test);
    free(test); 
    test = ft_strjoin("buenos dias amigitos", "");
-   printf(WHITE("%s\n"), test);
+   printf("%s\n", test);
    free(test); 
    test = ft_strjoin("", "");
-   printf(WHITE("%s\n"), test);
+   printf("%s\n", test);
    free(test); 
    }
    */

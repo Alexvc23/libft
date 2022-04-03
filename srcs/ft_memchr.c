@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../includes/libft.h"
+#include"libft.h"
 
 /*
    The memechr fucntion finds the first occurrence of c (converted to an   \

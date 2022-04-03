@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 /* Écrit la chaine de caractères ’s’ sur le file
    descriptor donné. */

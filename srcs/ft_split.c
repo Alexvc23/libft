@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jvalenci <jvalenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:29:17 by jvalenci          #+#    #+#             */
-/*   Updated: 2021/11/18 12:02:08 by jvalenci         ###   ########lyon.fr   */
+/*   Updated: 2022/03/26 15:42:29 by jvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-void	ft_free(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
-}
+#include "libft.h"
 
 int	ft_count_strings(char *str, char c, int count)
 {
@@ -50,7 +40,7 @@ char	*ft_new_word(char *s, char charset, int index, char **arr)
 	new_str = malloc((len + 1) * sizeof(char));
 	if (!new_str)
 	{
-		ft_free(arr);
+		ft_free((void**)arr);
 		return (NULL);
 	}
 	i = index;
